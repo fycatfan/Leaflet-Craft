@@ -28,7 +28,7 @@ export const undoRedoControl =  L.Control.extend({
         map.doubleClickZoom.disable();
         
         child.onclick = function(e) {
-
+            
             if(type === "undo") {
                 undoHandler(map);
             } else {
@@ -42,7 +42,7 @@ export const undoRedoControl =  L.Control.extend({
     },
 
     enableDisableButton: function(data) {
-        // data.map.undoIcon.style.opacity = 1;
+        data.map.doubleClickZoom.disable();
         if(redoMainStack.empty()) {
             data.map.redoIcon.style.opacity = 0.3;
         } else {
